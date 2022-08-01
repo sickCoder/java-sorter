@@ -27,8 +27,10 @@ class MergeSorter {
 	/**
 	 * Sort <code>arrayToSort</code> using a merge sort
 	 * algorithm.
+	 * 
+	 * @param arrayToSort The array to sort
 	 */
-	/*private*/ void mergeSort() {
+	/*private*/ void mergeSort(int[] arrayToSort) {
 		
 	}
 	
