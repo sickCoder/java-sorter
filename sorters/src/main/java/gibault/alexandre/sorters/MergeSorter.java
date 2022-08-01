@@ -12,13 +12,13 @@ class MergeSorter {
 	/**
 	 * The array we want to Sort
 	 */
-	int[] arrayToSort;
+	/*private*/ int[] arrayToSort;
 	
 	/**
 	 * Initialise <code>this.arrayToSort</code> with
 	 * <code>arrayToSort</code>.
 	 * 
-	 * @param arrayToSort The array we want to sort
+	 * @param arrayToSort The array to sort
 	 */
 	public MergeSorter(int[] arrayToSort) {
 		
