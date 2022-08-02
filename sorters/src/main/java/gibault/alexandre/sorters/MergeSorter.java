@@ -10,9 +10,9 @@ package gibault.alexandre.sorters;
 class MergeSorter {
 
 	/**
-	 * The array we want to Sort
+	 * The array to Sort
 	 */
-	/*private*/ int[] arrayToSort;
+	private int[] arrayToSort;
 	
 	/**
 	 * Initialise <code>this.arrayToSort</code> with
@@ -21,7 +21,7 @@ class MergeSorter {
 	 * @param arrayToSort The array to sort
 	 */
 	public MergeSorter(int[] arrayToSort) {
-		this.arrayToSort = arrayToSort;
+		this.arrayToSort = arrayToSort.clone();
 	}
 	
 	/**
@@ -30,16 +30,19 @@ class MergeSorter {
 	 * 
 	 * @param arrayToSort The array to sort
 	 */
-	/*private*/ void mergeSort(int[] arrayToSort) {
+	private void mergeSort(int[] arrayToSort) {
+		/*if (arrayToSort.length < 2)
+			return;
+		*/
 		if (arrayToSort.length > 1) {
 			int middle = arrayToSort.length / 2;
 			int[] left = new int[middle];
 			int[] right = new int[arrayToSort.length - middle];
-			initializeSubArrays(left, right);
+			initializeSubArrays(arrayToSort, left, right);
 			mergeSort(left);
 			mergeSort(right);
-			merge(left, right);
-		}
+			merge(arrayToSort, left, right);
+		}	
 	}
 	
 	/**
@@ -50,10 +53,11 @@ class MergeSorter {
 	 * <code>right = {3, 4}</code> then 
 	 * <code>arrayToSort = {3, 4, 6, 1}</code>
 	 * 
+	 * @param arrayToSort The array to sort
 	 * @param left left part of <code>arrayToSort</code>
 	 * @param right right part of <code>arrayToSort</code>
 	 */
-	/*private*/ void merge(int[] left, int[] right) {
+	private void merge(int[] arrayToSort, int[] left, int[] right) {
 		int index = 0;
 		int leftIndex = 0;
 		int rightIndex = 0;
@@ -71,7 +75,7 @@ class MergeSorter {
 			arrayToSort[index++] = left[leftIndex++];
 		//If right elements are not fully processed
 		while (rightIndex < right.length)
-			arrayToSort[index++] = right[rightIndex];
+			arrayToSort[index++] = right[rightIndex++];
 	}
 	
 	/**
@@ -84,12 +88,12 @@ class MergeSorter {
 	 * @param left the left part of <code>arrayToSort</code>
 	 * @param right the right part of <code>arrayToSort</code>
 	 */
-	/*private*/ void initializeSubArrays(int[] left, int[] right) {
+	private void initializeSubArrays(int[] arrayToSort, int[] left, int[] right) {
 		for (int i = 0; i < arrayToSort.length; i++) {
 			if (i < left.length)
 				left[i] = arrayToSort[i];
 			else
-				right[i] = arrayToSort[i];
+				right[i - arrayToSort.length / 2] = arrayToSort[i];
 		}
 	}
 	
