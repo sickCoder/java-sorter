@@ -31,9 +31,7 @@ class MergeSorter {
 	 * @param arrayToSort The array to sort
 	 */
 	private void mergeSort(int[] arrayToSort) {
-		/*if (arrayToSort.length < 2)
-			return;
-		*/
+		
 		if (arrayToSort.length > 1) {
 			int middle = arrayToSort.length / 2;
 			int[] left = new int[middle];
