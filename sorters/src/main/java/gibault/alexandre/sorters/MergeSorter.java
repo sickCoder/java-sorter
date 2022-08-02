@@ -21,17 +21,25 @@ class MergeSorter {
 	 * @param arrayToSort The array to sort
 	 */
 	public MergeSorter(int[] arrayToSort) {
-		
+		this.arrayToSort = arrayToSort;
 	}
 	
 	/**
-	 * Sort <code>arrayToSort</code> using a merge sort
+	 * Sort <code>arrayToSort</code> parameter using a merge sort
 	 * algorithm.
 	 * 
 	 * @param arrayToSort The array to sort
 	 */
 	/*private*/ void mergeSort(int[] arrayToSort) {
-		
+		if (arrayToSort.length > 1) {
+			int middle = arrayToSort.length / 2;
+			int[] left = new int[middle];
+			int[] right = new int[arrayToSort.length - middle];
+			initializeSubArrays(left, right);
+			mergeSort(left);
+			mergeSort(right);
+			merge(left, right);
+		}
 	}
 	
 	/**
@@ -46,7 +54,24 @@ class MergeSorter {
 	 * @param right right part of <code>arrayToSort</code>
 	 */
 	/*private*/ void merge(int[] left, int[] right) {
+		int index = 0;
+		int leftIndex = 0;
+		int rightIndex = 0;
 		
+		//Comparing left and right elements
+		while (leftIndex < left.length && rightIndex < right.length) {
+			if (left[leftIndex] <= right[rightIndex])
+				arrayToSort[index++] = left[leftIndex++];
+			else
+				arrayToSort[index++] = right[rightIndex++];
+		}
+		
+		//If left elements are not fully processed
+		while (leftIndex < left.length)
+			arrayToSort[index++] = left[leftIndex++];
+		//If right elements are not fully processed
+		while (rightIndex < right.length)
+			arrayToSort[index++] = right[rightIndex];
 	}
 	
 	/**
@@ -60,7 +85,12 @@ class MergeSorter {
 	 * @param right the right part of <code>arrayToSort</code>
 	 */
 	/*private*/ void initializeSubArrays(int[] left, int[] right) {
-		
+		for (int i = 0; i < arrayToSort.length; i++) {
+			if (i < left.length)
+				left[i] = arrayToSort[i];
+			else
+				right[i] = arrayToSort[i];
+		}
 	}
 	
 	/**
@@ -70,6 +100,7 @@ class MergeSorter {
 	 * @return <code>arrayToSort</code> sorted
 	 */
 	public int[] getSortedArray() {
-		return null;
+		mergeSort(arrayToSort);
+		return arrayToSort;
 	}
 }
