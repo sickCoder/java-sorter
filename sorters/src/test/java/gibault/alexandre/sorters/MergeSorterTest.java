@@ -2,8 +2,6 @@ package gibault.alexandre.sorters;
 
 import static org.junit.Assert.*;
 
-import org.hamcrest.core.IsInstanceOf;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import org.junit.Test;
@@ -13,8 +11,9 @@ public class MergeSorterTest {
 	@Test
 	public void testMergeSorter() {
 		int[] arrayToSort = {5, 3, 1, 4};
+		int[] expected = {1, 3, 4, 5};
 		MergeSorter sorter = new MergeSorter(arrayToSort);
-		//TODO test constructor
+		assertThat(sorter.getSortedArray(), equalTo(expected));
 	}
 
 	@Test
