@@ -1,7 +1,7 @@
 package gibault.alexandre.sorters;
 
 /**
- * This class is intented to sort an <code>int</code> array
+ * This class is intended to sort an <code>int</code> array
  * using a merge sort algorithm.
  * 
  * @author Alexandre Gibault
@@ -10,13 +10,13 @@ package gibault.alexandre.sorters;
 class MergeSorter {
 
 	/**
-	 * The array to Sort
+	 * The array to Sort.
 	 */
 	private int[] arrayToSort;
 	
 	/**
-	 * Initialise <code>this.arrayToSort</code> with
-	 * <code>arrayToSort</code>.
+	 * Initialize <code>this.arrayToSort</code> by cloning
+	 * <code>arrayToSort</code> parameter.
 	 * 
 	 * @param arrayToSort The array to sort
 	 */
@@ -31,9 +31,7 @@ class MergeSorter {
 	 * @param arrayToSort The array to sort
 	 */
 	private void mergeSort(int[] arrayToSort) {
-		/*if (arrayToSort.length < 2)
-			return;
-		*/
+		
 		if (arrayToSort.length > 1) {
 			int middle = arrayToSort.length / 2;
 			int[] left = new int[middle];
@@ -51,7 +49,7 @@ class MergeSorter {
 	 * <code>left</code> and <code>right</code> are already sorted.
 	 * This means if we have <code>left = {6, 1}</code> and
 	 * <code>right = {3, 4}</code> then 
-	 * <code>arrayToSort = {3, 4, 6, 1}</code>
+	 * <code>arrayToSort = {3, 4, 6, 1}</code>.
 	 * 
 	 * @param arrayToSort The array to sort
 	 * @param left left part of <code>arrayToSort</code>
@@ -81,7 +79,7 @@ class MergeSorter {
 	/**
 	 * Initialize <code>left</code> and <code>right</code>
 	 * with <code>arrayToSort</code> elements. <code>left</code>
-	 * will contain th first half of <code>arrayToSort</code>.
+	 * will contain the first half of <code>arrayToSort</code>.
 	 * <code>right</code> will contain the second half of
 	 * <code>arrayToSort</code>.
 	 * 
