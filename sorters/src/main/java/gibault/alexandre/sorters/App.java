@@ -16,18 +16,27 @@ public class App
     	Random randomInt = new Random();
     	int[] array = new int[50];
     	
-    	for (int i = 0; i < array.length; i++) {
+    	for (int i = 0; i < array.length; i++)
 			array[i] = randomInt.nextInt(100);
-		}
     	
-    	MergeSorter mergeSorter = new MergeSorter(array);
+    	printMergeSortedArray(array);
+    }
+
+    /**
+     * Print <code>array</code> before and after
+     * merge sort being applied.
+     * 
+     * @param array The array to print
+     */
+	public static void printMergeSortedArray(int[] array) {
+		MergeSorter mergeSorter = new MergeSorter(array);
     	
     	System.out.println("==== Merge Sort ====\n");
     	System.out.println("Initial array");
     	printIntArray(array);
     	System.out.println("Sorted array");
     	printIntArray(mergeSorter.getSortedArray());
-    }
+	}
 
     /**
      * Print <code>array</code>.
