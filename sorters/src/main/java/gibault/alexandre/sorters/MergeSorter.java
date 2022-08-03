@@ -22,6 +22,7 @@ class MergeSorter {
 	 */
 	public MergeSorter(int[] arrayToSort) {
 		this.arrayToSort = arrayToSort.clone();
+		mergeSort(this.arrayToSort);
 	}
 	
 	/**
@@ -102,7 +103,6 @@ class MergeSorter {
 	 * @return <code>arrayToSort</code> sorted
 	 */
 	public int[] getSortedArray() {
-		mergeSort(arrayToSort);
 		return arrayToSort;
 	}
 }
