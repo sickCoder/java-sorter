@@ -20,6 +20,9 @@ public class App
 			array[i] = randomInt.nextInt(100);
     	
     	printMergeSortedArray(array);
+    	
+    	//TODO Selection sort
+    	//TODO Bubble sort
     }
 
     /**
