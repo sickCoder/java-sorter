@@ -34,6 +34,7 @@ Note: if you to run the tests in eclipse IDE.
    2. Comment `sort()` line in `SelectionSorter(int[] arrayToSort)`
    3. Uncomment the `sort()`line in `getSortedArray()`
 3. Run the tests
+
 ## Bubble sort
 
 Not yet implemented.
