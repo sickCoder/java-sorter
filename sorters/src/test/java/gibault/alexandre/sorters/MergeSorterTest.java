@@ -10,9 +10,9 @@ public class MergeSorterTest {
 
 	@Test
 	public void testMergeSorter() {
-		int[] arrayToSort = {5, 3, 1, 4};
+		int[] array = {5, 3, 1, 4};
 		int[] expected = {1, 3, 4, 5};
-		MergeSorter sorter = new MergeSorter(arrayToSort);
+		MergeSorter sorter = new MergeSorter(array);
 		assertThat(sorter.getSortedArray(), equalTo(expected));
 	}
 /*
