@@ -10,21 +10,32 @@ public class SelectionSorterTest {
 
 	@Test
 	public void testSelectionSorter() {
-		int[] arrayToSort = {5, 3, 1, 4};
+		int[] array = {5, 3, 1, 4};
 		int[] expected = {1, 3, 4, 5};
-		SelectionSorter sorter = new SelectionSorter(arrayToSort);
+		SelectionSorter sorter = new SelectionSorter(array);
 		assertThat(sorter.getSortedArray(), equalTo(expected));
 	}
 
 	@Test
 	public void testSort() {
-		int[] arrayToSort = {5, 3, 1, 4};
+		int[] array = {5, 3, 1, 4};
 		int[] expected = {1, 3, 4, 5};
-		SelectionSorter sorter = new SelectionSorter(arrayToSort);
-		sorter.sort(arrayToSort);
-		assertThat(arrayToSort, equalTo(expected));
+		SelectionSorter sorter = new SelectionSorter(array);
+		sorter.sort(array);
+		assertThat(array, equalTo(expected));
 	}
 
+	@Test
+	public void testFindMinIndex() {
+		int[] array = {5, 3, 1, 4};
+		int expected = 2;
+		int minIndex = 0;
+		SelectionSorter sorter = new SelectionSorter(array);
+		
+		minIndex = sorter.getMinIndex(array, 0, minIndex);
+		assertThat(minIndex, equalTo(expected));
+	}
+	
 	@Test
 	public void testSwap() {
 		int[] array = {5, 3, 1, 4};
