@@ -22,7 +22,7 @@ class SelectionSorter {
 	 */
 	public SelectionSorter(int[] arrayToSort) {
 		this.arrayToSort = arrayToSort.clone();
-		sort(this.arrayToSort);
+		sort();
 	}
 	
 	/**
@@ -31,13 +31,13 @@ class SelectionSorter {
 	 * 
 	 * @param arrayToSort The array to sort
 	 */
-	private void sort(int[] arrayToSort) {
+	private void sort() {
 		
 		for (int i = 0; i < arrayToSort.length - 1; i++) {
 			int minIndex = i;
 			
-			minIndex = getMinIndex(arrayToSort, i, minIndex);
-			swap(arrayToSort, minIndex, i);
+			minIndex = getMinIndex(i, minIndex);
+			swap(minIndex, i);
 		}
 	}
 
@@ -50,9 +50,9 @@ class SelectionSorter {
 	 * @param minIndex The current minimal element index
 	 * @return The minimal element index in <code>array</code>
 	 */
-	private int getMinIndex(int[] array, int index, int minIndex) {
-		for (int j = index + 1; j < array.length; j++) 
-			if (array[j] < array[minIndex]) {
+	private int getMinIndex(int index, int minIndex) {
+		for (int j = index + 1; j < arrayToSort.length; j++) 
+			if (arrayToSort[j] < arrayToSort[minIndex]) {
 				minIndex = j;
 			}
 		return minIndex;
@@ -66,10 +66,10 @@ class SelectionSorter {
 	 * @param minIndex The index of the minimal value in <code>array</code>
 	 * @param index The index to swap
 	 */
-	private void swap(int[] array, int minIndex, int index) {
-		int temp = array[minIndex];
-		array[minIndex] = array[index];
-		array[index] = temp;
+	private void swap(int minIndex, int index) {
+		int temp = arrayToSort[minIndex];
+		arrayToSort[minIndex] = arrayToSort[index];
+		arrayToSort[index] = temp;
 	}
 	
 	/**
@@ -78,6 +78,7 @@ class SelectionSorter {
 	 * @return <code>this.arrayToSort</code> sorted
 	 */
 	public int[] getSortedArray() {
+		//sort();
 		return arrayToSort;
 	}
 }

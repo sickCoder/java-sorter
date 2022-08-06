@@ -12,7 +12,7 @@ It divides recursively the initial array in two halves sub arrays. It continuous
 be divided again (the sub arrays are empty or contain only one element). Then, the merge process begins. It takes two sorted
 arrays and combines them into a larger array.
 
-Note : If you whant to try the test file, delete the comment tokens in `MergeSorterTest.java` and comment the `private` key words before all methods in `MergeSorter.java`.
+Note : If you whant to try the test file in eclipse IDE, delete the comment tokens in `MergeSorterTest.java` and comment the `private` key words before all methods in `MergeSorter.java`.
 
 ## Selection sort
 
@@ -27,6 +27,13 @@ In each iterations of selection sort algorithm, the minimal
 element of the unsorted sub array is moved to the sorted
 sub array.
 
+Note: if you to run the tests in eclipse IDE. 
+1. Uncomment the commented section of `SelectionSorterTest.java`
+2. In `SelectionSorter.java`
+   1. Comment the `private` key word on field and methods
+   2. Comment `sort()` line in `SelectionSorter(int[] arrayToSort)`
+   3. Uncomment the `sort()`line in `getSortedArray()`
+3. Run the tests
 ## Bubble sort
 
 Not yet implemented.
