@@ -16,7 +16,16 @@ Note : If you whant to try the test file, delete the comment tokens in `MergeSor
 
 ## Selection sort
 
-Not yet implemented.
+The Selection sort algorithm search for the minimal element in an array
+in order to put it at the begining of the array.
+The array is splited in two sub arrays: one sorted and one 
+unsorted array. The left part of the array becomes the sorted
+sub array as the algorithm is executed, the rest of the array
+is the unsorted sub array. At the beginning, the whole array is
+unsorted.
+In each iterations of selection sort algorithm, the minimal
+element of the unsorted sub array is moved to the sorted
+sub array.
 
 ## Bubble sort
 
