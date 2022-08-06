@@ -31,7 +31,7 @@ class SelectionSorter {
 	 * 
 	 * @param arrayToSort The array to sort
 	 */
-	/*private*/ void sort(int[] arrayToSort) {
+	private void sort(int[] arrayToSort) {
 		
 		for (int i = 0; i < arrayToSort.length - 1; i++) {
 			int minIndex = i;
@@ -41,7 +41,16 @@ class SelectionSorter {
 		}
 	}
 
-	/*private*/ int getMinIndex(int[] array, int index, int minIndex) {
+	/**
+	 * Retruns the minimal element index starting from <code>index</code>
+	 * in <code>array</code>.
+	 * 
+	 * @param array The array to find the minimal element index
+	 * @param index The begining index
+	 * @param minIndex The current minimal element index
+	 * @return The minimal element index in <code>array</code>
+	 */
+	private int getMinIndex(int[] array, int index, int minIndex) {
 		for (int j = index + 1; j < array.length; j++) 
 			if (array[j] < array[minIndex]) {
 				minIndex = j;
@@ -57,7 +66,7 @@ class SelectionSorter {
 	 * @param minIndex The index of the minimal value in <code>array</code>
 	 * @param index The index to swap
 	 */
-	/*private*/ void swap(int[] array, int minIndex, int index) {
+	private void swap(int[] array, int minIndex, int index) {
 		int temp = array[minIndex];
 		array[minIndex] = array[index];
 		array[index] = temp;
@@ -68,7 +77,7 @@ class SelectionSorter {
 	 * 
 	 * @return <code>this.arrayToSort</code> sorted
 	 */
-	/*private*/ int[] getSortedArray() {
+	public int[] getSortedArray() {
 		return arrayToSort;
 	}
 }
