@@ -16,16 +16,29 @@ public class App
     	Random randomInt = new Random();
     	int[] array = new int[50];
     	
+    	//Initialize array
     	for (int i = 0; i < array.length; i++)
 			array[i] = randomInt.nextInt(100);
     	
     	printMergeSortedArray(array);
-    	
+    	System.out.println();
     	//TODO Selection sort
     	//TODO Bubble sort
     }
 
     /**
+     * Print <code>array</code>.
+     * 
+     * @param array The array to print
+     */
+	public static void printIntArray(int[] array) {
+		System.out.print("{ ");
+		for (int i = 0; i < array.length; i++)
+			System.out.print(array[i] + " ");
+		System.out.println("}");
+	}
+	
+	/**
      * Print <code>array</code> before and after
      * merge sort is applied.
      * 
@@ -39,17 +52,5 @@ public class App
     	printIntArray(array);
     	System.out.println("Sorted array");
     	printIntArray(mergeSorter.getSortedArray());
-	}
-
-    /**
-     * Print <code>array</code>.
-     * 
-     * @param array The array to print
-     */
-	public static void printIntArray(int[] array) {
-		System.out.print("{ ");
-		for (int i = 0; i < array.length; i++)
-			System.out.print(array[i] + " ");
-		System.out.println("}");
 	}
 }
