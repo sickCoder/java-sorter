@@ -24,7 +24,7 @@ public class App
     	System.out.println();
     	printSelectionSortedArray(array);
     	System.out.println();
-    	//TODO Bubble sort
+    	printBubbleSortedArray(array);
     }
 
     /**
@@ -65,6 +65,22 @@ public class App
 		SelectionSorter sorter = new SelectionSorter(array);
     	
     	System.out.println("==== Selection Sort ====\n");
+    	System.out.println("Initial array");
+    	printIntArray(array);
+    	System.out.println("Sorted array");
+    	printIntArray(sorter.getSortedArray());
+	}
+	
+	/**
+     * Print <code>array</code> before and after
+     * Bubble sort is applied.
+     * 
+     * @param array The array to print
+     */
+	public static void printBubbleSortedArray(int[] array) {
+		BubbleSorter sorter = new BubbleSorter(array);
+    	
+    	System.out.println("==== Bubble Sort ====\n");
     	System.out.println("Initial array");
     	printIntArray(array);
     	System.out.println("Sorted array");
