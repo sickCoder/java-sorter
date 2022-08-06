@@ -15,7 +15,7 @@ public class SelectionSorterTest {
 		SelectionSorter sorter = new SelectionSorter(array);
 		assertThat(sorter.getSortedArray(), equalTo(expected));
 	}
-
+/*
 	@Test
 	public void testSort() {
 		int[] array = {5, 3, 1, 4};
@@ -44,7 +44,7 @@ public class SelectionSorterTest {
 		sorter.swap(array, 2, 0);
 		assertThat(array, equalTo(expected));
 	}
-
+*/
 	@Test
 	public void testGetSortedArray() {
 		int[] array = {5, 3, 1, 4};
