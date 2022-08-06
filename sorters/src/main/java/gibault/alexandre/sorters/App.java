@@ -27,7 +27,7 @@ public class App
 
     /**
      * Print <code>array</code> before and after
-     * merge sort being applied.
+     * merge sort is applied.
      * 
      * @param array The array to print
      */
