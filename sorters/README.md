@@ -42,7 +42,7 @@ the adjacent elements of an array if they are not in the correct order.
 
 Note: if you to run the tests in eclipse IDE. 
 1. Uncomment the commented section of `BubbleSorterTest.java`
-2. In `Bubbleorter.java`
+2. In `BubbleSorter.java`
    1. Comment the `private` key word on field and methods
    2. Comment `sort()` line in `BubbleSorter(int[] arrayToSort)`
    3. Uncomment the `sort()`line in `getSortedArray()`
