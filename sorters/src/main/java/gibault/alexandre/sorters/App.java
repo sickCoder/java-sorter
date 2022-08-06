@@ -22,8 +22,8 @@ public class App
     	
     	printMergeSortedArray(array);
     	System.out.println();
-    	//TODO Selection sort
     	printSelectionSortedArray(array);
+    	System.out.println();
     	//TODO Bubble sort
     }
 
