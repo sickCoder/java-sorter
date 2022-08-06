@@ -23,6 +23,7 @@ public class App
     	printMergeSortedArray(array);
     	System.out.println();
     	//TODO Selection sort
+    	printSelectionSortedArray(array);
     	//TODO Bubble sort
     }
 
@@ -45,12 +46,28 @@ public class App
      * @param array The array to print
      */
 	public static void printMergeSortedArray(int[] array) {
-		MergeSorter mergeSorter = new MergeSorter(array);
+		MergeSorter sorter = new MergeSorter(array);
     	
     	System.out.println("==== Merge Sort ====\n");
     	System.out.println("Initial array");
     	printIntArray(array);
     	System.out.println("Sorted array");
-    	printIntArray(mergeSorter.getSortedArray());
+    	printIntArray(sorter.getSortedArray());
+	}
+	
+	/**
+     * Print <code>array</code> before and after
+     * selection sort is applied.
+     * 
+     * @param array The array to print
+     */
+	public static void printSelectionSortedArray(int[] array) {
+		SelectionSorter sorter = new SelectionSorter(array);
+    	
+    	System.out.println("==== Selection Sort ====\n");
+    	System.out.println("Initial array");
+    	printIntArray(array);
+    	System.out.println("Sorted array");
+    	printIntArray(sorter.getSortedArray());
 	}
 }
