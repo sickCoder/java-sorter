@@ -36,13 +36,17 @@ class SelectionSorter {
 		for (int i = 0; i < arrayToSort.length - 1; i++) {
 			int minIndex = i;
 			
-			for (int j = i + 1; j < arrayToSort.length; j++) 
-				if (arrayToSort[j] < arrayToSort[minIndex]) {
-					minIndex = j;
-				}
-			
+			minIndex = getMinIndex(arrayToSort, i, minIndex);
 			swap(arrayToSort, minIndex, i);
 		}
+	}
+
+	/*private*/ int getMinIndex(int[] array, int index, int minIndex) {
+		for (int j = index + 1; j < array.length; j++) 
+			if (array[j] < array[minIndex]) {
+				minIndex = j;
+			}
+		return minIndex;
 	}
 	
 	/**
