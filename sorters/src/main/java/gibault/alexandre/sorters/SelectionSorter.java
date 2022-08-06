@@ -21,7 +21,8 @@ class SelectionSorter {
 	 * @param arrayToSort The array to sort
 	 */
 	public SelectionSorter(int[] arrayToSort) {
-		
+		this.arrayToSort = arrayToSort.clone();
+		sort(this.arrayToSort);
 	}
 	
 	/**
@@ -32,6 +33,16 @@ class SelectionSorter {
 	 */
 	/*private*/ void sort(int[] arrayToSort) {
 		
+		for (int i = 0; i < arrayToSort.length - 1; i++) {
+			int minIndex = i;
+			
+			for (int j = i + 1; j < arrayToSort.length; j++) 
+				if (arrayToSort[j] < arrayToSort[minIndex]) {
+					minIndex = j;
+				}
+			
+			swap(arrayToSort, minIndex, i);
+		}
 	}
 	
 	/**
@@ -43,7 +54,9 @@ class SelectionSorter {
 	 * @param index The index to swap
 	 */
 	/*private*/ void swap(int[] array, int minIndex, int index) {
-		
+		int temp = array[minIndex];
+		array[minIndex] = array[index];
+		array[index] = temp;
 	}
 	
 	/**
@@ -52,6 +65,6 @@ class SelectionSorter {
 	 * @return <code>this.arrayToSort</code> sorted
 	 */
 	/*private*/ int[] getSortedArray() {
-		return null;
+		return arrayToSort;
 	}
 }
