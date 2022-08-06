@@ -16,6 +16,7 @@ class SelectionSorter {
 	
 	/**
 	 * Clone <code>arrayToSort</code> into
+	 * <code>this.arrayToSort</code>. Sort
 	 * <code>this.arrayToSort</code>.
 	 * 
 	 * @param arrayToSort The array to sort

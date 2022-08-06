@@ -16,7 +16,8 @@ class MergeSorter {
 	
 	/**
 	 * Initialize <code>this.arrayToSort</code> by cloning
-	 * <code>arrayToSort</code> parameter.
+	 * <code>arrayToSort</code> parameter. Sort
+	 * <code>this.arrayToSort</code>.
 	 * 
 	 * @param arrayToSort The array to sort
 	 */
